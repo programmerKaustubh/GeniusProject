@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:hint="First Name"
+            android:inputType="textNoSuggestions"
+            android:padding="2dp"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/etJob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:hint="Job"
+            android:inputType="textPersonName"
+            android:padding="2dp"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/btnCancelAddUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp"
+                android:text="Cancel"
+                android:textSize="16dp" />
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/btnAddUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp"
+                android:text="Add"
+                android:textSize="16dp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
