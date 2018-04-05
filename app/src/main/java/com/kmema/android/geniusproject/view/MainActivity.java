@@ -1,6 +1,7 @@
 package com.kmema.android.geniusproject.view;
 
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -59,8 +60,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void displayError() {
-
+    public void displayError(String errorMessage) {
+        Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),errorMessage,Snackbar.LENGTH_LONG);
+        snackbar.show();
     }
 
     @Override

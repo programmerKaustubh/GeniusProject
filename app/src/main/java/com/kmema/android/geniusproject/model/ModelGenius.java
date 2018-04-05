@@ -6,6 +6,8 @@ import com.kmema.android.geniusproject.ContractPresenterModel;
 import com.kmema.android.geniusproject.api.ApiCallInterface;
 import com.kmema.android.geniusproject.api.ApiClient;
 
+import java.io.IOException;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -32,13 +34,23 @@ public class ModelGenius implements ContractPresenterModel.ModelTask{
             @Override
             public void onResponse(Call<Users> call, Response<Users> response) {
                 Log.i(TAG_MODELGENIUS, "onResponse() called");
-                Users users = response.body();
-                mPresenterTask.processUsers(users);
+
+                if(response.isSuccessful()){
+                    Users users = response.body();
+                    mPresenterTask.processUsers(users);
+                }else{
+                    mPresenterTask.processError(response);
+                }
             }
 
             @Override
             public void onFailure(Call<Users> call, Throwable t) {
                 Log.i(TAG_MODELGENIUS, "onFailure() called");
+                if(t instanceof IOException){
+                    mPresenterTask.failedConnection("Network Failure, Retry Later");
+                }else{
+
+                }
             }
         });
     }

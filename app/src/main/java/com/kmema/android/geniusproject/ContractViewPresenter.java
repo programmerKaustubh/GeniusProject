@@ -15,7 +15,7 @@ public interface ContractViewPresenter {
 
     interface ViewTask{
         void displayData(List<UserData> userData);
-        void displayError();
+        void displayError(String errorMessage);
         void newUserData(UpdatedUserData updatedUserData);
     }
 }
