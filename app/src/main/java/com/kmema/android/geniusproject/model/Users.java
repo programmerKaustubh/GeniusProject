@@ -11,6 +11,14 @@ public class Users {
 
     private String total_pages;
 
+    public Users(String total, String per_page, String page, UserData[] data, String total_pages) {
+        this.total = total;
+        this.per_page = per_page;
+        this.page = page;
+        this.data = data;
+        this.total_pages = total_pages;
+    }
+
     public String getTotal ()
     {
         return total;
