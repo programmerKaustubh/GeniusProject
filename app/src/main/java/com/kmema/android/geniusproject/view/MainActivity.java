@@ -6,9 +6,15 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.kmema.android.geniusproject.ContractPresenterModel;
+import com.kmema.android.geniusproject.ContractViewPresenter;
 import com.kmema.android.geniusproject.R;
+import com.kmema.android.geniusproject.model.UpdatedUserData;
+import com.kmema.android.geniusproject.model.UserData;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, ContractViewPresenter.ViewTask{
 
 
     RecyclerView mRecyclerView;
@@ -26,6 +32,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+
+    }
+
+    @Override
+    public void displayData(List<UserData> userData) {
+
+    }
+
+    @Override
+    public void displayError() {
+
+    }
+
+    @Override
+    public void newUserData(UpdatedUserData updatedUserData) {
 
     }
 }

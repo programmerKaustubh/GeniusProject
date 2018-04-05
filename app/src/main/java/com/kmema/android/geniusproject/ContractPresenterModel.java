@@ -3,7 +3,7 @@ package com.kmema.android.geniusproject;
 import com.kmema.android.geniusproject.model.UpdatedUserData;
 import com.kmema.android.geniusproject.model.Users;
 
-public class ContractPresenterModel {
+public interface ContractPresenterModel {
     interface PresenterTask{
         public void processUsers(Users users);
         public void updatedUser(UpdatedUserData updatedUserData);
