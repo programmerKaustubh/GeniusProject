@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.kmema.android.geniusproject.R;
 
-public class NewUserViewHolder extends RecyclerView.ViewHolder {
+class NewUserViewHolder extends RecyclerView.ViewHolder {
 
 
     TextView tvName, tvJob, tvTime, tvId;
@@ -20,6 +20,6 @@ public class NewUserViewHolder extends RecyclerView.ViewHolder {
         tvId = itemView.findViewById(R.id.tvId);
         tvJob = itemView.findViewById(R.id.tvJob);
         tvTime = itemView.findViewById(R.id.tvTime);
-        ivNewUser = itemView.findViewById(R.id.ivAvater);
+        ivNewUser = itemView.findViewById(R.id.ivAvatar);
     }
 }

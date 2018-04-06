@@ -7,14 +7,14 @@ import retrofit2.Response;
 
 public interface ContractPresenterModel {
     interface PresenterTask{
-        public void processUsers(Users users);
-        public void updatedUser(UpdatedUserData updatedUserData);
-        public void processError(Response<?> response);
-        public void failedConnection(String errorMssage);
+        void processUsers(Users users);
+        void updatedUser(UpdatedUserData updatedUserData);
+        void processError(Response<?> response);
+        void failedConnection(String errorMessage);
     }
 
     interface ModelTask{
-        public void getUserData();
-        public void postUserData(String FirstName, String Job);
+        void getUserData();
+        void postUserData(String FirstName, String Job);
     }
 }

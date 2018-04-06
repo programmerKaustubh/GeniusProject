@@ -25,11 +25,12 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, ContractViewPresenter.ViewTask, AddUserDialogFragment.FragmentClickListner {
 
 
-    ContractViewPresenter.PresenterTask mContractViewPresenter;
-    RecyclerView mRecyclerView;
-    FloatingActionButton fabAddbtn;
-    List<Object> oldObjects, updatedList;
-    UsersRecyclerAdapter mUsersRecyclerAdapter;
+    private ContractViewPresenter.PresenterTask mContractViewPresenter;
+    private RecyclerView mRecyclerView;
+    private FloatingActionButton fabAddbtn;
+    private List<Object> oldObjects;
+    private List<Object> updatedList;
+    private UsersRecyclerAdapter mUsersRecyclerAdapter;
     private final String TAG_MAIN_ACTIVITY = "MainActivity";
 
     @Override

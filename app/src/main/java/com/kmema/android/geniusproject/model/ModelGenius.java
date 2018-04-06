@@ -1,5 +1,6 @@
 package com.kmema.android.geniusproject.model;
 
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.kmema.android.geniusproject.ContractPresenterModel;
@@ -32,7 +33,7 @@ public class ModelGenius implements ContractPresenterModel.ModelTask{
         usersGetCall = mApiCallInterface.USER_DATA_CALL();
         usersGetCall.enqueue(new Callback<Users>() {
             @Override
-            public void onResponse(Call<Users> call, Response<Users> response) {
+            public void onResponse(@NonNull Call<Users> call, @NonNull Response<Users> response) {
                 Log.i(TAG_MODEL_GENIUS, "onResponse() called");
 
                 if(response.isSuccessful()){
@@ -44,7 +45,7 @@ public class ModelGenius implements ContractPresenterModel.ModelTask{
             }
 
             @Override
-            public void onFailure(Call<Users> call, Throwable t) {
+            public void onFailure(@NonNull Call<Users> call, Throwable t) {
                 Log.i(TAG_MODEL_GENIUS, "onFailure() called");
                 if(t instanceof IOException){
                     mPresenterTask.failedConnection("Network Failure, Retry Later");
@@ -61,7 +62,7 @@ public class ModelGenius implements ContractPresenterModel.ModelTask{
             updatedUserDataCall = mApiCallInterface.ADD_USER_CALL(updateUser);
             updatedUserDataCall.enqueue(new Callback<UpdatedUserData>() {
                 @Override
-                public void onResponse(Call<UpdatedUserData> call, Response<UpdatedUserData> response) {
+                public void onResponse(@NonNull Call<UpdatedUserData> call, @NonNull Response<UpdatedUserData> response) {
 
                     if(response.isSuccessful()){
                         UpdatedUserData updatedUserData = response.body();
@@ -73,7 +74,7 @@ public class ModelGenius implements ContractPresenterModel.ModelTask{
                 }
 
                 @Override
-                public void onFailure(Call<UpdatedUserData> call, Throwable t) {
+                public void onFailure(@NonNull Call<UpdatedUserData> call, Throwable t) {
                     Log.i(TAG_MODEL_GENIUS, "onFailure() called");
                     if(t instanceof IOException){
                         mPresenterTask.failedConnection("Network Failure, Retry Later");

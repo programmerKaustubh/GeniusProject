@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <android.support.v7.widget.AppCompatImageView
-            android:id="@+id/imageViewAvater"
+            android:id="@+id/imageViewAvatar"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:src="@color/colorAccent" />

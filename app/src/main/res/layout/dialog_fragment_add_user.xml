@@ -16,10 +16,10 @@
             android:layout_marginEnd="4dp"
             android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
-            android:hint="First Name"
+            android:hint="@string/user_name"
             android:inputType="textNoSuggestions"
             android:padding="2dp"
-            android:textSize="16dp" />
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/etJob"
@@ -28,10 +28,10 @@
             android:layout_marginEnd="4dp"
             android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
-            android:hint="Job"
+            android:hint="@string/job_title"
             android:inputType="textPersonName"
             android:padding="2dp"
-            android:textSize="16dp" />
+            android:textSize="16sp" />
 
         <LinearLayout
             android:weightSum="2"
@@ -40,21 +40,23 @@
             android:orientation="horizontal">
 
             <Button
+                style="?android:buttonBarButtonStyle"
                 android:layout_weight="1"
                 android:id="@+id/btnCancelAddUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:elevation="10dp"
-                android:text="Cancel"
-                android:textSize="16dp" />
+                android:text="@string/cancel"
+                android:textSize="16sp" />
             <Button
+                style="?android:buttonBarButtonStyle"
                 android:layout_weight="1"
                 android:id="@+id/btnAddUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:elevation="10dp"
-                android:text="Add"
-                android:textSize="16dp" />
+                android:text="@string/add"
+                android:textSize="16sp" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
