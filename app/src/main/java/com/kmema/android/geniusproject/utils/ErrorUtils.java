@@ -1,8 +1,7 @@
-package com.kmema.android.geniusproject.helpers;
+package com.kmema.android.geniusproject.utils;
 
 import com.kmema.android.geniusproject.api.ApiClient;
 import com.kmema.android.geniusproject.api.ApiError;
-import com.kmema.android.geniusproject.view.MainActivity;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;

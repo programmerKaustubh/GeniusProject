@@ -27,9 +27,9 @@
             <TextView
                 android:id="@+id/textViewFirstName"
                 android:layout_width="match_parent"
-                android:layout_height="18dp"
+                android:layout_height="wrap_content"
                 tools:text="First Name"
-                android:textSize="16sp" />
+                android:textSize="@dimen/font_Size" />
 
             <TextView
                 android:id="@+id/textViewSurname"
@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 tools:text="Surname Name"
-                android:textSize="16sp" />
+                android:textSize="@dimen/font_Size" />
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

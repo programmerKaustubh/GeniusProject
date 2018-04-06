@@ -5,7 +5,7 @@ import android.util.Log;
 import com.kmema.android.geniusproject.ContractPresenterModel;
 import com.kmema.android.geniusproject.ContractViewPresenter;
 import com.kmema.android.geniusproject.api.ApiError;
-import com.kmema.android.geniusproject.helpers.ErrorUtils;
+import com.kmema.android.geniusproject.utils.ErrorUtils;
 import com.kmema.android.geniusproject.model.ModelGenius;
 import com.kmema.android.geniusproject.model.UpdatedUserData;
 import com.kmema.android.geniusproject.model.UserData;
@@ -34,7 +34,12 @@ public class PresenterGenius implements ContractViewPresenter.PresenterTask, Con
 
     @Override
     public boolean postData(String FirstName, String Job) {
-        return false;
+        if (FirstName != null && !FirstName.isEmpty() && Job != null && !Job.isEmpty()) {
+            mModelTask.postUserData(FirstName, Job);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
@@ -52,7 +57,7 @@ public class PresenterGenius implements ContractViewPresenter.PresenterTask, Con
 
     @Override
     public void updatedUser(UpdatedUserData updatedUserData) {
-
+        viewTask.newUserData(updatedUserData);
     }
 
     @Override

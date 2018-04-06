@@ -15,13 +15,14 @@ import java.util.List;
 
 import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 
-public class UsersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+public class UsersRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
 
     private List<Object> mUserList;
     private Picasso mPicasso;
     private final int USER = 0, NEW_USER = 1;
-    public UsersAdapter(List<Object> mUserList) {
+
+    public UsersRecyclerAdapter(List<Object> mUserList) {
         this.mUserList = mUserList;
         mPicasso = Picasso.get();
     }
@@ -38,6 +39,8 @@ public class UsersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
                 viewHolder = new UserViewHolder(viewUser);
                 break;
             case NEW_USER:
+                View viewNewUser = inflater.inflate(R.layout.new_user, parent, false);
+                viewHolder = new NewUserViewHolder(viewNewUser);
                 break;
             default:
                 View view = inflater.inflate(null, parent, false);
@@ -55,6 +58,8 @@ public class UsersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
                 configureUserViewHolder(userView, position);
                 break;
             case NEW_USER:
+                NewUserViewHolder newUserViewHolder = (NewUserViewHolder) holder;
+                configureNewUserViewHolder(newUserViewHolder, position);
                 break;
             default:
                 break;
@@ -84,6 +89,15 @@ public class UsersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         userView.tvFirstName.setText(userData.getFirst_name());
         userView.tvSurName.setText(userData.getLast_name());
         mPicasso.load(userData.getAvatar()).transform(new CropCircleTransformation()).into(userView.imAvatar);
+    }
+
+    private void configureNewUserViewHolder(NewUserViewHolder newUserViewHolder, int position) {
+        UpdatedUserData updatedUserData = (UpdatedUserData) mUserList.get(position);
+        newUserViewHolder.tvName.setText(updatedUserData.getName());
+        newUserViewHolder.tvJob.setText(updatedUserData.getJob());
+        newUserViewHolder.tvTime.setText(updatedUserData.getCreatedAt());
+        newUserViewHolder.tvId.setText(updatedUserData.getId());
+        mPicasso.load(R.drawable.sample).transform(new CropCircleTransformation()).into(newUserViewHolder.ivNewUser);
     }
 
 }
