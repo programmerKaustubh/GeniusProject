@@ -21,6 +21,7 @@ public class ModelGenius implements ContractPresenterModel.ModelTask{
     private Call<Users> usersGetCall;
     private Call<UpdatedUserData> updatedUserDataCall;
     private final String TAG_MODEL_GENIUS ="ModelGenius";
+
     public ModelGenius(ContractPresenterModel.PresenterTask presenterTask){
         this.mPresenterTask = presenterTask;
         mApiCallInterface = ApiClient.getClient().create(
@@ -63,7 +64,6 @@ public class ModelGenius implements ContractPresenterModel.ModelTask{
             updatedUserDataCall.enqueue(new Callback<UpdatedUserData>() {
                 @Override
                 public void onResponse(@NonNull Call<UpdatedUserData> call, @NonNull Response<UpdatedUserData> response) {
-
                     if(response.isSuccessful()){
                         UpdatedUserData updatedUserData = response.body();
                         mPresenterTask.updatedUser(updatedUserData);

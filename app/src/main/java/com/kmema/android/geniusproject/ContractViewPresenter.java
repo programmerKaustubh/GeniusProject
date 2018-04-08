@@ -1,5 +1,6 @@
 package com.kmema.android.geniusproject;
 
+import com.kmema.android.geniusproject.model.UniversalData;
 import com.kmema.android.geniusproject.model.UpdatedUserData;
 import com.kmema.android.geniusproject.model.UserData;
 
@@ -14,7 +15,7 @@ public interface ContractViewPresenter {
     }
 
     interface ViewTask{
-        void displayData(List<UserData> userData);
+        void displayData(List<UniversalData> universalDataList);
         void displayError(String errorMessage);
         void newUserData(UpdatedUserData updatedUserData);
     }

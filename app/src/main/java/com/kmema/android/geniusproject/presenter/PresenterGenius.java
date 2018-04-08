@@ -5,13 +5,16 @@ import android.util.Log;
 import com.kmema.android.geniusproject.ContractPresenterModel;
 import com.kmema.android.geniusproject.ContractViewPresenter;
 import com.kmema.android.geniusproject.api.ApiError;
+import com.kmema.android.geniusproject.model.UniversalData;
 import com.kmema.android.geniusproject.utils.ErrorUtils;
 import com.kmema.android.geniusproject.model.ModelGenius;
 import com.kmema.android.geniusproject.model.UpdatedUserData;
 import com.kmema.android.geniusproject.model.UserData;
 import com.kmema.android.geniusproject.model.Users;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 import retrofit2.Response;
@@ -21,9 +24,11 @@ public class PresenterGenius implements ContractViewPresenter.PresenterTask, Con
     private ContractPresenterModel.ModelTask mModelTask = new ModelGenius(this);
     private final String TAG_PRESENTER = "PresenterGenius";
     private ContractViewPresenter.ViewTask viewTask;
+    private List<UniversalData> universalDataList;
 
     public PresenterGenius(ContractViewPresenter.ViewTask viewTask) {
         this.viewTask = viewTask;
+        universalDataList = new ArrayList<>();
     }
 
     @Override
@@ -45,14 +50,8 @@ public class PresenterGenius implements ContractViewPresenter.PresenterTask, Con
     @Override
     public void processUsers(Users users) {
         Log.i(TAG_PRESENTER, "processUsers() Called");
-        List<UserData> mUserData = transformData(users);
-        viewTask.displayData(mUserData);
-    }
-
-    private List<UserData> transformData(Users users) {
-        List<UserData> userData = Arrays.asList(users.getData());
-        Log.i(TAG_PRESENTER, "Transform() Called" + userData.get(1));
-        return userData;
+        universalDataList.addAll(Arrays.asList(users.getData()));
+        viewTask.displayData(universalDataList);
     }
 
     @Override

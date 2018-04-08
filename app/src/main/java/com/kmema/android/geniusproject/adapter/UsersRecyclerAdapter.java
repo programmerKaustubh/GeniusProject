@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.kmema.android.geniusproject.R;
+import com.kmema.android.geniusproject.model.UniversalData;
 import com.kmema.android.geniusproject.model.UpdatedUserData;
 import com.kmema.android.geniusproject.model.UserData;
 import com.squareup.picasso.Picasso;
@@ -18,11 +19,11 @@ import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 public class UsersRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
 
-    private List<Object> mUserList;
+    private List<UniversalData> mUserList;
     private Picasso mPicasso;
     private final int USER = 0, NEW_USER = 1;
 
-    public UsersRecyclerAdapter(List<Object> mUserList) {
+    public UsersRecyclerAdapter(List<UniversalData> mUserList) {
         this.mUserList = mUserList;
         mPicasso = Picasso.get();
     }

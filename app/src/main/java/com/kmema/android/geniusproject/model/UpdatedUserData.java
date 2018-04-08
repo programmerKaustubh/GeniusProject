@@ -1,6 +1,8 @@
 package com.kmema.android.geniusproject.model;
 
-public class UpdatedUserData {
+import android.os.Parcel;
+
+public class UpdatedUserData extends UniversalData {
     private String id;
 
     private String createdAt;
@@ -8,6 +10,10 @@ public class UpdatedUserData {
     private String name;
 
     private String job;
+
+    protected UpdatedUserData(Parcel in) {
+        super(in);
+    }
 
     public String getId() {
         return id;

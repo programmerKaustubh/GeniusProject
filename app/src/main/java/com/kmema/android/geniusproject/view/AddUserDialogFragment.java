@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.kmema.android.geniusproject.R;
 
-public class AddUserDialogFragment extends DialogFragment implements View.OnClickListener{
+public class AddUserDialogFragment extends DialogFragment implements View.OnClickListener {
     private EditText etFirstName, etJob;
     private Button btnAddUser, btnCancel;
     private final String TAG_DIALOG_FRAGMEN = "DIALOG_Fragment";
@@ -69,7 +69,6 @@ public class AddUserDialogFragment extends DialogFragment implements View.OnClic
     private void sendResultBack(String FirstName, String Job) {
         FragmentClickListner addUserDialogFragment = (FragmentClickListner) getActivity();
         if (addUserDialogFragment.userInput(FirstName, Job)) {
-            Toast.makeText(getActivity().getApplicationContext(), "Accepted", Toast.LENGTH_SHORT).show();
             dismiss();
         } else {
             Toast.makeText(getActivity().getApplicationContext(), "Enter User Information", Toast.LENGTH_SHORT).show();
